@@ -1,0 +1,106 @@
+<div class="container">
+  <h1>Titulo del PDF</h1>
+  <br>
+  <br>
+  <br>
+  <p>This week in Rails: strong ETag validators, Action Cable enhancements and more! Posted by repinel, April 8, 2016 @ 12:00 am in News Hello everyone! This is Roque bringing the latest news from Rails. Hope you enjoy, and see y’all at the RailsConf in a month! Featured
+  This Week’s Rails Contributors This week 39 people contributed to Rails. We also got 11 first time contributors. Welcome aboard folks and keep it going!
+  Strong ETag validators 
+  Strong ETag is now available in addition to weak ETag. It implies that the response should be exactly the same and byte by byte identical. Useful when doing things like Range requests within a large video or PDF file. 
+  Action Cable protocol negotiation 
+  Action Cable will gracefully disconnects clients and disables the monitor if the protocol has changed. This allows clients to gradually move to the newest version.
+
+  Improved 
+  Allow passing record being validated to error message generator 
+  The record being validated is now accessible from the message proc to generate custom error messages like: proc { |record, data| "#{data[:attribute]} failed with value #{record.name}." }
+
+Add non-US format support to number_to_phone
+Need to format a non-US phone number? You can now use number_to_phone with the :pattern option as a Regexp.
+
+Fixed
+
+Fixed duplicated emails issue with Sendmail
+There was an issue with Action Mailer when calling Sendmail with the -t argument. Sendmail would scan messages for recipients, and it could result in duplicated emails.
+
+Fixed the String#to_time behaviour to match Ruby’s
+Previously, the method returned today’s midnight time when there was no relevant information in the string. Now it returns nil.
+
+Wrapping Up
+
+That’s all for This week in Rails. As always, there are plenty of things we’re not able to cover here, so take a look at the changes yourself.
+
+Until next time!
+
+This week in Rails: new query methods, Action Cable enhancements and more!
+Posted by imtayadeway, April 1, 2016 @ 12:00 am in News
+####
+
+Hey everybody! Tim here reporting from Portland, OR on another solid week for the Rails community. As a protest to April Fools’ typical tomfoolery, this edition is coming to you 100% jape-free. No, really!
+
+Featured
+
+This Week’s Rails Contributors
+This week 29 lovely people contributed to Rails, including 5 for the first time! A big Friday Hug goes out to all of them! Feel free to check out the list of current issues for ideas if you’d like to join them ❤️
+
+Improved
+
+Active Record gets a few extra query methods
+Ever find yourself writing cumbersome things like User.count.zero?? You can now use the terser User.none?, as well as User.one? and User.empty?, as these three methods just got added.
+
+The default worker pool size for Action Cable just got lowered considerably!
+The author of this revision put it best: “Whack it down from 100 to 4”. This will decrease the number of db connections for most, who probably don’t need so many.
+
+Notifications can now hook into Action Cable
+Just as you can subscribe to Action Controller’s #process_action, so you can now with ActionCable::Channel::Base#perform_action after this fine addition. Get notified!
+
+Fixed
+
+Prepared statements to have a cache separate from unprepared statements
+This subtle bug was fixed this week, wherein a connection that was established with prepared statements enabled could fail if a query that had been previously run was run again with prepared statements disabled. This was because it was hitting the same cache as the prepared statements-enabled query. Prepared statements now have their own cache, which solves the problem. Hurrah!
+
+rails runner now shows the correct command name when run with Spring
+Running rails runner with no arguments or with the --help flag shows you some information on how to use the runner as a shebang line. Unfortunately, if you were using Spring, it would get the path wrong because Spring changes a variable that relates to the command that was run (bin/rails). That just got fixed in this revision!
+
+Using rails restart with Puma now works!
+Previously, when issuing rails restart with Puma running, it would fail to bring it up again since Puma was trying to inspect ARGV to decide how to go about it. The fix involved changing Puma to allow its configuration options to be overridden by Rails. Great job!
+
+Wrapping Up
+
+That’s all for This week in Rails. As always, there are plenty of things we’re not able to cover here, so take a look at the changes yourself.
+
+Until next time!</p>
+  <br>
+  <div>________________________________________________________________________________________________________</div>
+  <br>
+  
+  <br>
+
+
+  <br>
+  <h4>Personas de la BD</h4>
+  <br>
+  
+      <table id="table1" class="table table-hover">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>NAME</th>
+      <th>LASNAME</th>
+      <th>ADRESS</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @personas.each do |p| %>
+    <tr ng-repeat="Val in Result">
+      <td><%=p.id%></td>
+      <td><%=p.name%></td>
+      <td><%=p.lasname%></td>
+      <td><%=p.adress%></td>
+    </tr>
+    <%end%>
+    </tbody>
+  </table>
+  
+
+
+</div>

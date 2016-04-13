@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
 # Use mysql as the database for Active Record
-gem 'mysql2'
+gem 'mysql2','~> 0.3.20'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -13,6 +13,14 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
+
+gem 'bootstrap-sass'
+
+# Gem para imprimir en PDF desde Cero, una linea de codigo que se usa con esta gem esta en config/aplication.rb
+gem 'prawn' 
+
+#Gem Para imprimir de HTML a PDF
+gem 'pdfkit' 
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
